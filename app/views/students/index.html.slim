@@ -1,3 +1,24 @@
+= template_include_tag 'students_list'
+= form_for Student.new, remote: true, id: '#student_form' do |f|
+
+  = f.label :name, 'Name'
+  = f.text_field :name
+
+  = f.label :surname, 'Surname'
+  = f.text_field :surname
+
+  = f.label :date_of_birth, 'Date of birth'
+  = f.text_field :date_of_birth
+
+  = f.label :email, 'Email'
+  = f.text_field :email
+
+  = f.label :group, 'Number group'
+
+  = collection_select(:student, :group_id, Group.all, :id, :name)
+  = f.submit 'Create', id: 'submit_btn'
+
+
 
 h1 Rating best 10 students
 table#students_list

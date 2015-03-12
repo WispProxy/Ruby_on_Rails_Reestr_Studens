@@ -34,6 +34,8 @@ gem 'machinist'
 gem 'poirot'
 # From beautiful standard styles
 gem 'bootstrap-sass'
+# From ActiveRecord old standard attributes protected
+gem 'protected_attributes', '~> 1.0.8'
 # END
 
 # Use ActiveModel has_secure_password
