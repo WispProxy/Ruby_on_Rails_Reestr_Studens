@@ -11,9 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150312174115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "semester"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "subject_id"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["student_id"], name: "index_ratings_on_student_id", using: :btree
+  add_index "ratings", ["subject_id"], name: "index_ratings_on_subject_id", using: :btree
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.integer  "group_id"
+    t.date     "date_of_birth"
+    t.string   "email"
+    t.string   "registration_ip"
+    t.datetime "registration_time"
+    t.text     "characteristic"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "students", ["group_id"], name: "index_students_on_group_id", using: :btree
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "ratings", "students"
+  add_foreign_key "ratings", "subjects"
+  add_foreign_key "students", "groups"
 end
