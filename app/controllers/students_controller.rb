@@ -1,5 +1,8 @@
 class StudentsController < ApplicationController
-	before_filter { @students = Student.includes([:group, :subjects]).top_ten }
+  before_filter { @students = Student.top_ten }
+
+  # Worked block - output all students!
+  #before_filter { @students = Student.all }
 
 	def index
 		respond_to do |format|
@@ -15,7 +18,7 @@ class StudentsController < ApplicationController
 		if student.save
 			render json: @students
 		else
-			render text: student.errors.full_messages.join(', '), status: 406
+			render text: student.errors.full_messages.join(', ')
 		end
 	end
 

@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   resource :students, only: [:index, :create] do
     post 'search'
   end
+
+  # resource :students do
+  #   get 'create'
+  # end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

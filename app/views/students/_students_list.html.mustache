@@ -1,29 +1,20 @@
 <tr>
   <td>Name</td>
   <td>Surname</td>
-  <td>Group</td>
   <td>Semester</td>
   <td>Average score</td>
   <td>Date of birth</td>
-  <td>Characteristic</td>
+  <td>E-mail</td>
   <td>Registration IP-adress</td>
-  <td>Registration time</td>
-  <td>Ratings</td>
-</tr>{{#.}}<tr>
-<td>{{name}}</td>
-<td>{{surname}}</td>
-<td>{{group_id}}</td>
-<td>{{semester}}</td>
-<td>{{average_rating}}</td>
-<td>{{date_of_birth}}</td>
-<td>{{characteristic}}</td>
-<td>{{registration_ip}}</td>
-<td>{{created_at}}</td>
-<td>
-  <ul>
-    {{#rating}}
-    <li>{{subject.name}} - {{rating}}</li>
-    {{/rating}}
-  </ul>
-</td>
-</tr>{{/.}}
+</tr>
+{{#.}}
+<tr>
+    <td>{{name}}</td>
+    <td>{{surname}}</td>
+    <td>{{semester}}</td>
+    <td>{{average_rating}}</td>
+    <td>{{date_of_birth}}</td>
+    <td>{{email}}</td>
+    <td>{{registration_ip}}</td>
+</tr>
+{{/.}}

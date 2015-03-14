@@ -23,6 +23,8 @@ default: &default
   timeout: 5000
   host: localhost
   port: 5432
+  username: rails_user
+  password: Pa$$w0rd!
 
 development:
   <<: *default
@@ -84,5 +86,3 @@ test:
 production:
   <<: *default
   database: reestr_students_db
-  username: rails_user
-  password: Pa$$w0rd!

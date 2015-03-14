@@ -2,12 +2,13 @@ doctype html
 html
   head
     title Ruby_On_Rails_Reestr_Studens
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
 
   body
-    #content
+    = yield
+    /#content
       #row
         #col-lg-2
         #col-lg-8
