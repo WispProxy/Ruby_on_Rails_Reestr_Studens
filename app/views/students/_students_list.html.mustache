@@ -1,20 +1,25 @@
-<tr>
-  <td>Name</td>
-  <td>Surname</td>
-  <td>Semester</td>
-  <td>Average score</td>
-  <td>Date of birth</td>
-  <td>E-mail</td>
-  <td>Registration IP-adress</td>
-</tr>
+<thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Semester</th>
+      <th>Average score</th>
+      <th>Date of birth</th>
+      <th>E-mail</th>
+      <th>Registration IP-adress</th>
+    </tr>
+</thead>
+
+<tbody>
 {{#.}}
-<tr>
-    <td>{{name}}</td>
-    <td>{{surname}}</td>
-    <td>{{semester}}</td>
-    <td>{{average_rating}}</td>
-    <td>{{date_of_birth}}</td>
-    <td>{{email}}</td>
-    <td>{{registration_ip}}</td>
-</tr>
+    <tr>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{semester}}</td>
+        <td>{{average_rating}}</td>
+        <td>{{date_of_birth}}</td>
+        <td>{{email}}</td>
+        <td>{{registration_ip}}</td>
+    </tr>
 {{/.}}
+</tbody>

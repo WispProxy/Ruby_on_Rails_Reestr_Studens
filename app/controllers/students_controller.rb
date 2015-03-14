@@ -14,6 +14,7 @@ class StudentsController < ApplicationController
 	def create
 		student = Student.new params[:student]
 		student.registration_ip = request.remote_ip
+    student.registration_time = Time.now
 
 		if student.save
 			render json: @students

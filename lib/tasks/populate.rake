@@ -22,12 +22,4 @@ namespace :db do
 
 		puts 'Population is done'
 	end
-
-	# task :clear => :environment do
-	# 	[Student, Rating, Group, Subject].each &:delete_all
-	# 	puts 'Clear is done'
-	# end
-	#
-	# task :repopulate => [:clear, :populate]
-
 end

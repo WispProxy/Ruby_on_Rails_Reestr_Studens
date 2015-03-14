@@ -1,24 +1,40 @@
-= template_include_tag 'students_list'
-= form_for Student.new, remote: true, id: '#student_form' do |f|
+.container-fluid
+  .row
+    .title
+      h3 Input new studet
 
-  = f.label :name, 'Name'
-  = f.text_field :name
+    = template_include_tag 'students_list'
+    = form_for Student.new, remote: true, id: 'student_form' do |f|
+      .form-group
+        //= f.label :name, 'Name'
+        .input-group
+          span.input-group-addon
+          = f.text_field :name, class: 'form-control', placeholder: 'Name'
 
-  = f.label :surname, 'Surname'
-  = f.text_field :surname
+        //= f.label :surname, 'Surname'
+        .input-group
+          span.input-group-addon
+          = f.text_field :surname, class: 'form-control', placeholder: 'Surname'
 
-  = f.label :date_of_birth, 'Date of birth'
-  = f.text_field :date_of_birth
+        //= f.label :date_of_birth, 'Date of birth'
+        .input-group
+          span.input-group-addon
+          = f.text_field :date_of_birth, class: 'form-control', placeholder: 'Date of birth'
 
-  = f.label :email, 'Email'
-  = f.text_field :email
+        //= f.label :email, 'E-mail'
+        .input-group
+          span.input-group-addon
+          = f.text_field :email, class: 'form-control', placeholder: 'E-mail'
 
-  = f.label :group, 'Number group'
+        = f.label :group, 'Name group'
 
-  = collection_select(:student, :group_id, Group.all, :id, :name)
-  = f.submit 'Create', id: 'submit_btn'
+        = collection_select(:student, :group_id, Group.all, :id, :name)
+        = f.submit 'Create', id: 'submit_btn', class: 'btn btn-info'
 
 
+.container-fluid
+  .row
+    .title
+      h3 Rating best 10 students
 
-h1 Rating best 10 students
-table#students_list.table
+    table#students_list.table.table-striped.table-condensed.table-hover

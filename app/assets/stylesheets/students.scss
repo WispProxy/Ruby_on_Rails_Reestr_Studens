@@ -1,8 +1,16 @@
 // Place all the styles related to the students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-table {
-  border-style: solid;
-  border-color: green;
-  border-width: 5px;
+
+#new_student {
+  #submit_btn {
+    float:              right;
+  }
 }
+
+.table-hover {
+  &:active {
+    background-color:   #cccccc;
+  }
+}
+
