@@ -2,24 +2,22 @@
     <tr>
       <th>Name</th>
       <th>Surname</th>
-      <th>Semester</th>
       <th>Average score</th>
-      <th>Date of birth</th>
+      <th>Group number</th>
+      <th>Group name</th>
       <th>E-mail</th>
-      <th>Registration IP-adress</th>
     </tr>
 </thead>
 
 <tbody>
 {{#.}}
     <tr>
-        <td>{{name}}</td>
-        <td>{{surname}}</td>
-        <td>{{semester}}</td>
-        <td>{{average_rating}}</td>
-        <td>{{date_of_birth}}</td>
-        <td>{{email}}</td>
-        <td>{{registration_ip}}</td>
+        <td>{{students_name}}</td>
+        <td>{{students_surname}}</td>
+        <td>{{average_ratings}}</td>
+        <td>{{groups_semester}}</td>
+        <td>{{groups_name}}</td>
+        <td>{{students_email}}</td>
     </tr>
 {{/.}}
 </tbody>
