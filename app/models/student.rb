@@ -12,19 +12,19 @@ class Student < ActiveRecord::Base
   validates_presence_of :name, :surname, :group, :email, :registration_ip
   before_save :generate_random_characteristic
 
-  scope :max_min_score, -> (min, max) {
+  scope :max_min_score, ->(min, max) {
     includes(:ratings)
         .group(:student_id)
         .having('AVG(ratings.rating) <= ? AND AVG(ratings.rating) >= ?', max, min)
   }
-  scope :by_surname, -> (surname) {
+  scope :by_surname, ->(surname) {
     where('students.surname = ?', surname)
   }
-  scope :by_group, -> (group_name) {
+  scope :by_group, ->(group_name) {
     includes(:group)
         .where('groups.name = ?', group_name)
   }
-  scope :by_semester, -> (semester) {
+  scope :by_semester, ->(semester) {
     includes(:group)
         .where('groups.semester = ?', semester)
   }
